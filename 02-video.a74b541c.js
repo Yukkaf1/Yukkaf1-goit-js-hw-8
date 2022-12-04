@@ -548,10 +548,10 @@ const onTime = function(e) {
 };
 player.on("timeupdate", onTime);
 function localVimeo() {
-    const savedMessage = localStorage.getItem(STORAGE_KEY);
-    if (savedMessage) {
-        console.log(savedMessage);
-        player.setCurrentTime(Number(savedMessage));
+    const savedTime = localStorage.getItem(STORAGE_KEY);
+    if (savedTime !== null) {
+        console.log(savedTime);
+        player.setCurrentTime(Number(savedTime));
     }
     player.setCurrentTime(0);
 }
