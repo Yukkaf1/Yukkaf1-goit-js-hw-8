@@ -10,10 +10,13 @@ const formData = {};
 
 localText();
 
+
+
 refs.form.addEventListener('submit', onForm);
 refs.textarea.addEventListener('input', throttle(onText, 500));
+refs.input.addEventListener('input', throttle(onText, 500));
 
-refs.form.addEventListener('input', e=> {
+refs.form.addEventListener('input', e => {
     formData[e.target.name] = e.target.value;
 });
 
@@ -41,4 +44,5 @@ function localText() {
          refs.textarea.value = savedMessage.message;
          refs.input.value = savedMessage.email;
      }
+     
 }
