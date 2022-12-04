@@ -562,7 +562,7 @@ function onText(e) {
 }
 function localText() {
     const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (savedMessage) {
+    if (savedMessage !== null) {
         // console.log(savedMessage);
         refs.textarea.value = savedMessage.message;
         refs.input.value = savedMessage.email;
